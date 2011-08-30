@@ -12,6 +12,8 @@
 + (void)presentInViewController:(UIViewController *)viewController withSubject:(NSString *)subject messageBody:(NSString *)messageBody isHTML:(BOOL)isHTML;
 + (void)presentInViewController:(UIViewController *)viewController withToRecipients:(NSArray *)recipients subject:(NSString *)subject messageBody:(NSString *)messageBody isHTML:(BOOL)isHTML;
 
++ (void)presentFeedbackEmailViewControllerInViewController:(UIViewController *)viewController;
+
 @end
 
 #pragma mark -
