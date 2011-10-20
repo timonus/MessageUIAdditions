@@ -4,7 +4,7 @@
 
 #import "MessageUI + TJAdditions.h"
 
-#define FEEDBACK_RECIPIENT @"tijoinc@gmail.com"		// make this the email you'd like to receive feedback at
+#define FEEDBACK_RECIPIENT @"you@yourdomain.com"		// make this the email you'd like to receive feedback at
 
 #pragma mark -
 #pragma mark MFMailComposeViewController
