@@ -4,6 +4,7 @@
 
 #import "MessageUI + TJAdditions.h"
 
+#warning Fill in your email
 #define FEEDBACK_RECIPIENT @"you@yourdomain.com"		// make this the email you'd like to receive feedback at
 
 #pragma mark -
