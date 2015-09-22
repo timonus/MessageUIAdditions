@@ -40,7 +40,7 @@
 
 + (void)presentFeedbackEmailViewControllerInViewController:(UIViewController *)viewController {
 	NSString *appName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];
-	NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+	NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
 	NSString *deviceModel = [[UIDevice currentDevice] model];
 	NSString *deviceOSVersion = [[UIDevice currentDevice] systemVersion];
 	
