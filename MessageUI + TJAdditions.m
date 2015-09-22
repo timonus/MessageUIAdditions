@@ -22,7 +22,7 @@
 	[controller setMessageBody:messageBody isHTML:isHTML];
 	[controller setMailComposeDelegate:controller];
 	
-	[viewController presentModalViewController:controller animated:YES];
+    [viewController presentViewController:controller animated:YES completion:nil];
 	[controller release];
 }
 
@@ -34,7 +34,7 @@
 	[controller setMailComposeDelegate:controller];
 	[controller setToRecipients:recipients];
 	
-	[viewController presentModalViewController:controller animated:YES];
+    [viewController presentViewController:controller animated:YES completion:nil];
 	[controller release];
 }
 
@@ -51,7 +51,7 @@
 #pragma mark MFMailComposeViewControllerDelegate
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
-	[controller dismissModalViewControllerAnimated:YES];
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
@@ -72,7 +72,7 @@
 	
 	[controller setMessageComposeDelegate:controller];
 	
-	[viewController presentModalViewController:controller animated:YES];
+    [viewController presentViewController:controller animated:YES completion:nil];
 	[controller release];
 }
 
@@ -80,7 +80,7 @@
 #pragma mark MFMessageComposeViewControllerDelegate
 
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
-	[controller dismissModalViewControllerAnimated:YES];
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
