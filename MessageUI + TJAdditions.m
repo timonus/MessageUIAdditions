@@ -23,7 +23,6 @@
 	[controller setMailComposeDelegate:controller];
 	
     [viewController presentViewController:controller animated:YES completion:nil];
-	[controller release];
 }
 
 + (void)presentInViewController:(UIViewController *)viewController withToRecipients:(NSArray *)recipients subject:(NSString *)subject messageBody:(NSString *)messageBody isHTML:(BOOL)isHTML {
@@ -35,7 +34,6 @@
 	[controller setToRecipients:recipients];
 	
     [viewController presentViewController:controller animated:YES completion:nil];
-	[controller release];
 }
 
 + (void)presentFeedbackEmailViewControllerInViewController:(UIViewController *)viewController {
@@ -73,7 +71,6 @@
 	[controller setMessageComposeDelegate:controller];
 	
     [viewController presentViewController:controller animated:YES completion:nil];
-	[controller release];
 }
 
 #pragma mark -
