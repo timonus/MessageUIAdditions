@@ -4,8 +4,9 @@
 
 #import <MessageUI/MessageUI.h>
 
-#pragma mark -
-#pragma mark MFMailComposeViewController
+NS_ASSUME_NONNULL_BEGIN
+
+#pragma mark - MFMailComposeViewController
 
 @interface MFMailComposeViewController (TJAdditions) <MFMailComposeViewControllerDelegate>
 
@@ -16,11 +17,12 @@
 
 @end
 
-#pragma mark -
-#pragma mark MFMessageComposeViewController
+#pragma mark - MFMessageComposeViewController
 
 @interface MFMessageComposeViewController (TJAdditions) <MFMessageComposeViewControllerDelegate>
 
 + (void)presentInViewController:(UIViewController *)viewController withBody:(NSString *)body;
 
 @end
+
+NS_ASSUME_NONNULL_END
