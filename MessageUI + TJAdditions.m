@@ -16,7 +16,7 @@
 
 + (void)presentInViewController:(UIViewController *)viewController withSubject:(NSString *)subject messageBody:(NSString *)messageBody isHTML:(BOOL)isHTML
 {
-    MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
+    MFMailComposeViewController *controller = [MFMailComposeViewController new];
     
     [controller setSubject:subject];
     [controller setMessageBody:messageBody isHTML:isHTML];
@@ -27,7 +27,7 @@
 
 + (void)presentInViewController:(UIViewController *)viewController withToRecipients:(NSArray *)recipients subject:(NSString *)subject messageBody:(NSString *)messageBody isHTML:(BOOL)isHTML
 {
-    MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
+    MFMailComposeViewController *controller = [MFMailComposeViewController new];
     
     [controller setSubject:subject];
     [controller setMessageBody:messageBody isHTML:isHTML];
@@ -73,7 +73,7 @@
 
 + (void)presentInViewController:(UIViewController *)viewController withBody:(NSString *)body
 {
-    MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
+    MFMessageComposeViewController *controller = [MFMessageComposeViewController new];
     
     [controller setBody:body];
     [controller setMessageComposeDelegate:controller];
