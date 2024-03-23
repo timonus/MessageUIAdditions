@@ -42,7 +42,14 @@
     NSString *deviceModel = [[UIDevice currentDevice] model];
     NSString *deviceOSVersion = [[UIDevice currentDevice] systemVersion];
     
-    [MFMailComposeViewController presentInViewController:viewController withToRecipients:[NSArray arrayWithObject:FEEDBACK_RECIPIENT] subject:[NSString stringWithFormat:@"%@ Feedback", appName] messageBody:[NSString stringWithFormat:@"<br><p><font color = \"gray\" size = 2><i>%@ %@ on %@ running iOS %@</i></font></p>", appName, appVersion, deviceModel, deviceOSVersion] isHTML:YES];
+    NSString *commitHash = [[NSBundle mainBundle] infoDictionary][@"GIT_COMMIT_HASH"];
+    if (commitHash.length >= 8) {
+        commitHash = [NSString stringWithFormat:@" (%@)", [commitHash substringToIndex:8]];
+    } else {
+        commitHash = @"";
+    }
+    
+    [MFMailComposeViewController presentInViewController:viewController withToRecipients:[NSArray arrayWithObject:FEEDBACK_RECIPIENT] subject:[NSString stringWithFormat:@"%@ Feedback", appName] messageBody:[NSString stringWithFormat:@"<br><p><font color = \"gray\" size = 2><i>%@ %@ on %@ running iOS %@%@</i></font></p>", appName, appVersion, deviceModel, deviceOSVersion, commitHash] isHTML:YES];
 }
 
 #pragma mark MFMailComposeViewControllerDelegate
