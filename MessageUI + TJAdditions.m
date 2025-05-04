@@ -3,6 +3,8 @@
 // By Tim Johnsen
 
 #import "MessageUI + TJAdditions.h"
+#import <sys/utsname.h>
+#import <sys/sysctl.h>
 
 #define FEEDBACK_RECIPIENT @"you@yourdomain.com"		// make this the email you'd like to receive feedback at
 
@@ -39,7 +41,9 @@
 {
     NSString *appName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];
     NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    NSString *deviceModel = [[UIDevice currentDevice] model];
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    NSString *deviceModel = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding]; // https://stackoverflow.com/a/11197770/3943258
     NSString *deviceOSVersion = [[UIDevice currentDevice] systemVersion];
     
     NSString *commitHash = [[NSBundle mainBundle] infoDictionary][@"GIT_COMMIT_HASH"];
