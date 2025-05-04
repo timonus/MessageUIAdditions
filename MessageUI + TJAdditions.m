@@ -73,7 +73,7 @@
     
     NSString *commitHash = [[NSBundle mainBundle] infoDictionary][@"GIT_COMMIT_HASH"];
     if (commitHash.length >= 8) {
-        commitHash = [NSString stringWithFormat:@" (%@)", [commitHash substringToIndex:8]];
+        commitHash = [NSString stringWithFormat:@" (%@)", [[commitHash substringToIndex:8] uppercaseString]];
     } else {
         commitHash = @"";
     }
